@@ -51,7 +51,7 @@ app.use(
 
 app.use((req:Request, res:Response, next:NextFunction) => {
     res.set("x-frame-options", "deny");
-    //res.cookie("my-token", req.csrfToken());
+    //res.cookie("csrftoken", req.csrfToken());
     next();
 });
 
