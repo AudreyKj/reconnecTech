@@ -67,15 +67,15 @@ app.get('/', (req:Request, res: Response) => {
 //ROUTES
 app.use('/users/auth', authRouter);
 
-//HOMEPAGE TEST
-app.get("/", function (req:Request, res:Response) {
-    res.sendFile(clientPath);
-});
+// //HOMEPAGE TEST
+// app.get("/", function (req:Request, res:Response) {
+//     res.sendFile(clientPath);
+// });
 
-//redirect to default page
-app.use((req:Request, res:Response) => {
-    res.redirect("/")
-});
+// //redirect to default page
+// app.use((req:Request, res:Response) => {
+//     res.redirect("/")
+// });
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
