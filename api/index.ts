@@ -47,11 +47,11 @@ app.use(
     })
 );
 
-app.use(require("csurf")());
+//app.use(require("csurf")());
 
 app.use((req:Request, res:Response, next:NextFunction) => {
     res.set("x-frame-options", "deny");
-    res.cookie("csrftoken", req.csrfToken());
+    //res.cookie("my-token", req.csrfToken());
     next();
 });
 
@@ -65,7 +65,7 @@ if (process.env.NODE_ENV === "production") {
 }); */
 
 //ROUTES
-app.use('/users/auth', donationsRouter);
+app.use('/donations', donationsRouter);
 
 // //HOMEPAGE TEST
 // app.get("/", function (req:Request, res:Response) {

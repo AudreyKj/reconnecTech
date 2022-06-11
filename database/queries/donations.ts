@@ -15,7 +15,7 @@ function registerDonor(first_name: string, last_name: string, email: string, cou
 
 function submitDonation(device_type:string, device_count:number, device_condition:string, device_collection:string, donor_id:string) {
     return pool.query(
-        `INSERT INTO users (device_type, device_count, device_condition, device_collection, donor_id)
+        `INSERT INTO donations(device_type, device_count, device_condition, device_collection, donor_id)
     VALUES ($1, $2, $3, $4, $5) RETURNING *`,
         [device_type, device_count, device_condition, device_collection, donor_id]
     );
