@@ -4,7 +4,7 @@ import compression from 'compression';
 import cookieSession from 'cookie-session';
 import cors from 'cors';
 import path from 'path';
-import {authRouter} from './requests/auth';
+import {donationsRouter} from './requests/donations';
 
 const app = express();
 const server = new Server(app);
@@ -65,7 +65,7 @@ if (process.env.NODE_ENV === "production") {
 }); */
 
 //ROUTES
-app.use('/users/auth', authRouter);
+app.use('/users/auth', donationsRouter);
 
 // //HOMEPAGE TEST
 // app.get("/", function (req:Request, res:Response) {
