@@ -20,7 +20,7 @@ function App() {
 
   return (
 
-    <header>
+    <header id="header-bar">
 
 
       <Link to="/"><h1>ReconnecTech</h1></Link>
