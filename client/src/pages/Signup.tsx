@@ -18,9 +18,8 @@ const handleLoginSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
 
   axios.post("/auth/login", { values }).then(({ data }) => {
       if (data.error) {
-          return setError('Please double check your email and password, then try again.');
+          return setError('Please check your email and password, then try again.');
       } else {
-          console.log('DATA SIGNUP', data)
           localStorage.setItem('user', data.userType);
 
           if(error)setError('');
@@ -29,7 +28,7 @@ const handleLoginSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
 
       }
   }).catch(() => {
-    setError('Please double check your email and password, then try again.')
+    setError('Please check your email and password, then try again.')
 
     setTimeout(() => {
         setError('')

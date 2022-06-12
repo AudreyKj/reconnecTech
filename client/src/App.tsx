@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { ReactComponent as SignUpIcon } from './icons/signup.svg';
 import { ReactComponent as CartIcon } from './icons/cart2.svg';
 import axios from 'axios';
@@ -12,9 +12,9 @@ function App() {
   const isUserLoggedIn = localStorage.getItem('user');
 
 
-  const logout = () => {
+  const logout = async () => {
     localStorage.clear();
-    //axios logout
+    await axios.get('/auth/logout')
   }
 
 
@@ -28,7 +28,7 @@ function App() {
 
       <div className="nav-container">
         <Link to="/homepage"> <button>Home</button></Link>
-        
+
         <Link to="/about"> <button>About us</button></Link>
 
         <Link to="/register-donor"> <button>Donate a device</button></Link>

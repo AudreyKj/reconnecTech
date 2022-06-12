@@ -46,9 +46,8 @@ function RegisterDonor() {
 
     console.log('deviceCount', deviceCount);
 
-    axios.post("/donations/register/donor", { firstName, lastName, companyName, city, country, email, password, deviceCondition, deviceCollection, deviceCount, deviceType }).then(({ data }) => {
-        console.log('DATA SIGNUP', data)
-        localStorage.setItem('user', data.userType);
+    axios.post("/donations/register/donor", { firstName, lastName, companyName, city, country, email, password, deviceCondition, deviceCollection, deviceCount, deviceType }).then(() => {
+        localStorage.setItem('user', 'donor');
 
         if (error) setError('');
 

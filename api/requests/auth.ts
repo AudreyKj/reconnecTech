@@ -26,10 +26,6 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         let passwordDB;
         let userType;
 
-        console.log('isUserRegisteredRecipient', isUserRegisteredRecipient);
-        console.log('isUserRegisteredDonor', isUserRegisteredDonor)
-
-
         if (isUserRegisteredRecipient && isUserRegisteredRecipient.rows[0]?.account_password) {
             passwordDB = isUserRegisteredRecipient.rows[0]?.account_password
             userType = 'recipient'
@@ -61,4 +57,9 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         console.log('error - login', error);
         return res.json({ error: true });
     }
+});
+
+
+authRouter.get("/logout", (req:Request, res:Response) => {
+    req.session.userId = null;
 });

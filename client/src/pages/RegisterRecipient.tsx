@@ -49,8 +49,7 @@ function RegisterRecipient() {
       if (data.error) {
           return setError("Error: please try again.");
       } else {
-          console.log('DATA SIGNUP', data)
-          localStorage.setItem('user', data.userType);
+          localStorage.setItem('user', 'recipient');
 
           if(error)setError('');
 
