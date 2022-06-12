@@ -480,3 +480,37 @@ font-size:1rem;
   background: #FDC707;
   width: 200px;
 }
+
+/* About Us Page */
+#title {
+  font-family: 'Zilla Slab';
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+#about-wrapper {
+  padding: 80px 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #FAF7EC;
+}
+
+#message {
+  margin-left: 50px;
+  font-family: 'Zilla Slab';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+#footer {
+  background: #F4ECEC;
+  height: 200px;
+}
