@@ -13,10 +13,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ]
   },
   "include": [
     "src"
   ],
-  "exclude": ["node_modules/**", "build/**", "coverage/**"]
+  "exclude": [
+    "node_modules/**",
+    "build/**",
+    "coverage/**"
+  ]
 }

@@ -154,6 +154,141 @@ header button {
   padding: 0.5rem 1rem;
   margin-top: 10Px;
   border: none;
+}
+
+.inventory-filtering {
+  position: absolute;
+  right: 2rem;
+}
+
+.inventory-filtering select {
+  margin: 10px;
+}
+
+/* Signup - login*/
+.signup {
+display:flex;
+justify-content: center;
+align-items: center;
+width:100%;
+height:100%;
+margin-top:-5%;
+}
+
+@media (max-width:800px){
+  .signup {
+      flex-direction:column;
+    }
+  
+}
+
+.login-container {
+  width:50%;
+}
+
+.form-login,
+.register-options {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-login {
+  background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    padding: 30px;
+    width:50%;
+}
+
+.login-submit {
+  background: #ccc;
+  width: min-content;
+  margin-top:15px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.login-submit:hover {
+  background:#121212f0;
+  color: #ccc;
+}
+
+.register-options button {
+  border: 1px solid #333;
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  transition: all 0.3s;
+}
+
+.register-options button:hover {
+  background:#121212f0;
+  color: #fff;
+
+}
+
+.error {
+  width: auto;
+  height: min-content;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+  background-color: #f9ded8;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+/* Donor Signup */
+
+#donor-header {
+  padding: 10px 0px;
+  font-size: 24px;
+  font-style: normal;
+}
+
+#instructions {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.input-element{
+  width: 350px;
+}
+
+.row {
+  width: fixed;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+#btn {
+  background: #045CAE;
+  padding: 20px;
+  color: white;
+}
+
+.inventory-list button {
+  cursor: pointer;
+  border-radius: 0.6rem;
+  background: #121212f0;
+  color: whitesmoke;
+  padding: 0.5rem 1rem;
+  margin-top: 10Px;
+  border: none;
   font-size: 1rem;
 }
 

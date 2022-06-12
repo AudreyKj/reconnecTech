@@ -34,7 +34,7 @@ function App() {
     <header>
 
 
-      <Link to="/"><h1>Reconnectech</h1></Link>
+      <Link to="/"><h1>ReconnecTech</h1></Link>
 
 
       <div className="nav-container">
