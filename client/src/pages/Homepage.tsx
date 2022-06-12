@@ -3,8 +3,17 @@ import image from "../icons/homepage.jpg";
 import '../App.css';
 
 function Homepage() {
+
+  function handleDonateHere (){
+    window.open("/register-donor", "_self");
+  }
+
   return (
     <div>
+
+      <div id="thankyou">
+        <p className="instructions"><b>Device successfully donated! Thank you for your support!</b></p>
+      </div>
       
       <div id="landing">
 
@@ -15,7 +24,7 @@ function Homepage() {
           <h3>Explore our smartphones, tablets, and laptops</h3>
           <button id="shop-btn">Shop</button>
           <h4>Have an old device you’d like to donate to people<br></br> recently displaced or are of low means?</h4>
-          <button id="doante-here-btn">Donate here</button>
+          <button id="doante-here-btn" onClick={handleDonateHere}>Donate here</button>
         </div>
         
       </div>

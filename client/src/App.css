@@ -261,11 +261,11 @@ margin-top:-5%;
 }
 
 .input-element{
-  width: 350px;
+  width: 360px !important;
 }
 
 .row {
-  width: fixed;
+  width: 97.5% !important;
 }
 
 .select {
@@ -431,6 +431,13 @@ font-size:1rem;
 
 /* Home page styling */
 
+#thankyou {
+  padding: 20px;
+  background: rgb(139, 245, 139);
+  display: none;
+  justify-content: center;
+}
+
 #landing {
   background: #F4ECEC;
   display: flex;
@@ -493,7 +500,7 @@ font-size:1rem;
 }
 
 #about-wrapper {
-  padding: 80px 120px;
+  padding: 50px 120px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -501,9 +508,9 @@ font-size:1rem;
 }
 
 #message {
-  margin-left: 50px;
+  margin-left: 60px;
   font-family: 'Zilla Slab';
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.05em;
@@ -512,5 +519,22 @@ font-size:1rem;
 
 #footer {
   background: #F4ECEC;
-  height: 200px;
+  height: 100px;
+}
+
+/* Recipient sign up page */
+
+#recipient-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#recipient-signup-btn {
+  background: black;
+  color: white;
+  border-radius: 0px;
+  padding: 15px;
+  width: 200px;
 }

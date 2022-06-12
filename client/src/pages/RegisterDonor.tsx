@@ -2,7 +2,11 @@ import React from 'react';
 import '../App.css';
 
 function RegisterDonor() {
-  
+
+  function handleDonateClick (){
+    window.open("/homepage", "_self");
+  }
+
   return (
     <div>
       <div>
@@ -84,7 +88,7 @@ function RegisterDonor() {
           <td><label><input type="radio" name="shipping"></input>Ship your device to:<br></br>London Industrial Park, <br></br>Unit 80, Roding Rd, London <br></br>E6 6LS, United Kingdom</label></td>
           </tr>
           <tr>
-          <td><br></br><button id="btn">Submit</button></td>
+          <td><br></br><button onClick={handleDonateClick} id="btn">Submit</button></td>
           </tr>
         </table>
 

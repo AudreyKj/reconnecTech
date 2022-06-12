@@ -31,7 +31,7 @@ function App() {
 
   return (
 
-    <header>
+    <header id="header-bar">
 
 
       <Link to="/"><h1>ReconnecTech</h1></Link>
@@ -45,7 +45,7 @@ function App() {
         <Link to="/register-donor"> <button>Donate a device</button></Link>
 
 
-        <Link to="/"> <button>Get a device</button></Link>
+        <Link to="/inventory"> <button>Get a device</button></Link>
 
 
         {!isUserLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
