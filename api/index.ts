@@ -5,6 +5,7 @@ import cookieSession from 'cookie-session';
 import cors from 'cors';
 import path from 'path';
 import {donationsRouter} from './requests/donations';
+import {recipientsRouter} from './requests/recipients';
 
 const app = express();
 const server = new Server(app);
@@ -62,6 +63,7 @@ if (process.env.NODE_ENV === "production") {
 
 //ROUTES
 app.use('/donations', donationsRouter);
+app.use('/recipients', recipientsRouter);
 
 // //HOMEPAGE TEST
 // app.get("/", function (req:Request, res:Response) {
