@@ -1,12 +1,16 @@
 body {
   background-color: #f9f9f9;
   height: 100vh;
+  width: 100%;
   font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .App,
 #root {
   height: 100%;
+  width: 100%;
 }
 
 button {
@@ -62,6 +66,10 @@ header {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 header a,
@@ -86,8 +94,8 @@ header button {
   font-size: 1.1rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
 
 .about-button-header {
@@ -149,147 +157,18 @@ header button {
 .inventory-list button {
   cursor: pointer;
   border-radius: 0.6rem;
-  background: #121212f0;
-  color: whitesmoke;
   padding: 0.5rem 1rem;
   margin-top: 10Px;
   border: none;
-}
-
-.inventory-filtering {
-  position: absolute;
-  right: 2rem;
-}
-
-.inventory-filtering select {
-  margin: 10px;
-}
-
-/* Signup - login*/
-.signup {
-display:flex;
-justify-content: center;
-align-items: center;
-width:100%;
-height:100%;
-margin-top:-5%;
-}
-
-@media (max-width:800px){
-  .signup {
-      flex-direction:column;
-    }
-  
-}
-
-.login-container {
-  width:50%;
-}
-
-.form-login,
-.register-options {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.form-login {
-  background-color: #fff;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-    padding: 30px;
-    width:50%;
-}
-
-.login-submit {
-  background: #ccc;
-  width: min-content;
-  margin-top:15px;
-  padding: 10px 20px;
-  transition: all 0.3s;
-}
-
-.login-submit:hover {
-  background:#121212f0;
-  color: #ccc;
-}
-
-.register-options button {
-  border: 1px solid #333;
-  padding: 2rem;
-  margin: 2rem 0;
-  background-color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  transition: all 0.3s;
-}
-
-.register-options button:hover {
-  background:#121212f0;
-  color: #fff;
-
-}
-
-.error {
-  width: auto;
-  height: min-content;
-  color: black;
-  font-size: 1rem;
-  text-align: center;
-  display: inline-block;
-  background-color: #f9ded8;
-  padding: 4px;
-  border-radius: 8px;
-}
-
-/* Donor Signup */
-
-#donor-header {
-  padding: 10px 0px;
-  font-size: 24px;
-  font-style: normal;
-}
-
-#instructions {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.input-element{
-  width: 350px;
-}
-
-.row {
-  width: fixed;
-}
-
-.select {
-  width: 100%;
-  padding: 10px;
-  font-size: 15px;
-  outline: none;
-}
-
-#btn {
-  background: #045CAE;
-  padding: 20px;
+  background-color: #0429AE;
   color: white;
+  transition: all 0.3s;
 }
 
-.inventory-list button {
-  cursor: pointer;
-  border-radius: 0.6rem;
-  background: #121212f0;
-  color: whitesmoke;
-  padding: 0.5rem 1rem;
-  margin-top: 10Px;
-  border: none;
-  font-size: 1rem;
+.inventory-list button:hover {
+  background: white;
+  color: #0429AE;
+  border: 1px solid #ccc;
 }
 
 .inventory-filtering {
@@ -382,6 +261,155 @@ margin-top:-5%;
   border-radius: 8px;
 }
 
+/* Donor Signup */
+
+.register-donor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.register-donor input {
+  width: 350px;
+}
+
+.register-donor label {
+  display: flex;
+  flex-direction: row;
+}
+
+.radio {
+  outline: none;
+  width: 30Px;
+  height: 15px;
+  border: none;
+}
+
+#donor-header {
+  padding: 10px 0px;
+  font-size: 24px;
+  font-style: normal;
+}
+
+#instructions {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.input-element {
+  width: 350px;
+}
+
+.row {
+  width: fixed;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+#btn {
+  background: #045CAE;
+  padding: 20px;
+  color: white;
+}
+
+.inventory-filtering {
+  position: absolute;
+  right: 2rem;
+}
+
+.inventory-filtering select {
+  margin: 10px;
+}
+
+/* Signup - login*/
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: -5%;
+}
+
+@media (max-width:800px) {
+  .signup {
+    flex-direction: column;
+  }
+
+}
+
+.login-container {
+  width: 50%;
+}
+
+.form-login,
+.register-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-login {
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  padding: 30px;
+  width: 50%;
+}
+
+.login-submit {
+
+  background: #121212f0;
+  color: white;
+  width: min-content;
+  margin-top: 15px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.login-submit:hover {
+  background: #ccc;
+  color: black;
+}
+
+.register-options button {
+  border: 1px solid #333;
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  transition: all 0.3s;
+}
+
+.register-options button:hover {
+  background: #121212f0;
+  color: #fff;
+
+}
+
+.error {
+  width: auto;
+  height: min-content;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+  background-color: #f9ded8;
+  padding: 4px;
+  border-radius: 8px;
+}
+
 /* Cart*/
 .cart {
   display: flex;
@@ -404,29 +432,78 @@ margin-top:-5%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   padding: 20px;
-  margin:1rem;
-  font-size:1rem;
+  margin: 1rem;
+  font-size: 1rem;
 }
 
 .cartItem button {
-  background: #000000;
-  color:white;
-border-radius: 5px;
-padding: 10Px;
-margin-top:10px;
-font-size:1rem;
-
+  background: black;
+  color: white;
+  border-radius: 3px;
+  padding: 10Px;
+  margin-top: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
 }
 
+.cartItem button:hover {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+
 .cartItem h1 {
-  margin:0;
-  padding:0;
-  font-size:1rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
 
 .order select {
   width: min-content;
-  background:#F4ECEC;
+  background: #F4ECEC;
 }
 
+/* //sign up recipient  */
 
+.signup-recipients-auth-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.signup-recipients-auth-wrapper h1 {
+  font-size: 1rem;
+  padding-bottom: 15px;
+}
+
+.auth-signup-recipients-container {
+  width: 40%;
+  margin-top: 15px;
+}
+
+.auth-signup-recipients-container a {
+  text-decoration: underline;
+}
+
+.auth-signup-recipients-container input {
+  margin: 5px 0;
+}
+
+.pw-requirements {
+  padding-top: 15px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.auth-signup-recipients-container button {
+  background: #000000;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  margin-right: 5px;
+
+}
