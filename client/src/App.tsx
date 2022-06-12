@@ -10,11 +10,6 @@ import './index.css';
 function App() {
 
   const isUserLoggedIn = localStorage.getItem('user');
-  const cartNum = localStorage.getItem('cartNum');
-  //check for local-storage: 
-  //// if loggedIn: display Profile instead of signup: same icon?
-
-  //logout: clear storage 
 
     const payload = {
       "first_name": 'xxx', "last_name": 'hhshsh', "email": 'audrey@gmail.com', "street_address": 'hhdhd', "country_location": 'gdggd', "city_location": 'hdd', "account_password": 'abc', "voucher": 'dhhd', "gov_issued_number": '123'
@@ -43,7 +38,7 @@ function App() {
 
 
       <div className="nav-container">
-        <Link to="/home"> <button>Home</button></Link>
+        <Link to="/homepage"> <button>Home</button></Link>
         
         <Link to="/about"> <button>About us</button></Link>
 
@@ -54,7 +49,7 @@ function App() {
 
 
         {!isUserLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
-        {isUserLoggedIn && <button>Logout</button>}
+        {isUserLoggedIn && <button onClick={logout}>Logout</button>}
 
 
         <Link to="/cart"> <button className="cart-button-header"><CartIcon /></button></Link>

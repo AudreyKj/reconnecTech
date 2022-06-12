@@ -2,7 +2,7 @@ import React from 'react';
 import image from "../icons/homepage.jpg";
 import '../App.css';
 
-function Home() {
+function Homepage() {
   return (
     <div>
       
@@ -38,4 +38,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Homepage;

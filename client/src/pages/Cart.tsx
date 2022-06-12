@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartItem } from '../components/cartItem';
+import { CartItem } from './components/CartItem';
 import { Link } from "react-router-dom";
 import '../App.css';
 
@@ -8,9 +8,7 @@ import '../App.css';
 function Cart() {
 
     const cartItems = JSON.parse(localStorage.getItem('cartItems') as string);
-    console.log('cartItems', cartItems)
     const isUserLoggedIn = localStorage.getItem('user');
-    console.log('isUserLoggedIn', isUserLoggedIn)
 
     return (
         <section className="cart">
