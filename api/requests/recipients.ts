@@ -11,11 +11,11 @@ declare module "express" {
   }
 
 recipientsRouter.post('/register', async (req: Request, res: Response) => {
-    const {first_name, last_name, email, street_address, country_location, city_location, account_password, voucher, gov_issued_number} = req.body;
+    const {firstName, lastName, password, email, city,govIssuedNumber} = req.body;
 
     try {
-        const hashPw = await hash(account_password, salt);
-        const newRecipient = await db.registerRecipient(first_name, last_name, email, street_address, country_location, city_location, hashPw, voucher, gov_issued_number);
+        const hashPw = await hash(password, salt);
+        const newRecipient = await db.registerRecipient(firstName, lastName, hashPw, email, city,govIssuedNumber);
 
         const newRecipientId = newRecipient.rows[0].id;
         req.session.userId = newRecipientId
@@ -29,28 +29,16 @@ recipientsRouter.post('/register', async (req: Request, res: Response) => {
 })
 
 recipientsRouter.post('/order/new', async (req: Request, res: Response) => {
-<<<<<<< HEAD
-    const {device_type} = req.body;
-
-    try {
-        const recipient_id = req.session.userId;
-        const status = "Order in Progress"
-        await db.orderDevice(recipient_id, device_type, status)
-=======
     const {deviceType, collectionMethod, paymentMethod} = req.body;
 
     try {
         const recipientId = req.session.userId;
         const status = "Order in Progress"
         await db.orderDevice(recipientId, deviceType, collectionMethod, paymentMethod, status)
->>>>>>> master
         return res.json(true)
     } catch(error){
         console.log('error', error)
         return res.json(error)
     }
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> master
+

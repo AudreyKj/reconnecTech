@@ -1,15 +1,13 @@
 const { pool } = require('../db-setUp');
 export {}
 
-function registerRecipient(firstName:string, lastName:string, email:string, streetAddress:string, countryLocation:string, cityLocation:string, accountPassword:string, voucher:string, govIssuedNumber:string) {
+function registerRecipient(firstName:string, lastName:string, email:string, city:string, accountPassword:string, govIssuedNumber:string) {
     return pool.query(
-        `INSERT INTO recipients(first_name, last_name, email, street_address, country_location, city_location, account_password, voucher, gov_issued_number)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
-        [firstName, lastName, email, streetAddress, countryLocation, cityLocation, accountPassword, voucher, govIssuedNumber]
+        `INSERT INTO recipients(first_name, last_name, email, city_location, account_password, gov_issued_number)
+    VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+        [firstName, lastName, email, city, accountPassword, govIssuedNumber]
     );
 }
-
-
 
 function orderDevice(recipientId:string, deviceType:string, collectionMethod:string, paymentMethod:string, status:string) {
     return pool.query(
