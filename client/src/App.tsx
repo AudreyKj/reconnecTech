@@ -34,7 +34,7 @@ function App() {
         <Link to="/get-a-device"> <button>Get a device</button></Link>
 
 
-        {localStorage.getItem('user') && <Link to="/login"> <button><SignUpIcon /></button></Link>}
+        {!localStorage.getItem('user') && <Link to="/login"> <button><SignUpIcon /></button></Link>}
         {(localStorage.getItem('user') || userLoggedIn) && <button onClick={logout}>Logout</button>}
 
 
