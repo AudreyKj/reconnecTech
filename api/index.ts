@@ -7,6 +7,7 @@ import path from 'path';
 import {donationsRouter} from './requests/donations';
 import {recipientsRouter} from './requests/recipients';
 import {profileRouter} from './requests/profile';
+import {authRouter} from './requests/auth';
 
 const app = express();
 const server = new Server(app);
@@ -66,6 +67,7 @@ if (process.env.NODE_ENV === "production") {
 app.use('/donations', donationsRouter);
 app.use('/recipients', recipientsRouter);
 app.use('/profile', profileRouter);
+app.use('/auth', authRouter);
 
 // //HOMEPAGE TEST
 // app.get("/", function (req:Request, res:Response) {

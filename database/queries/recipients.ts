@@ -9,11 +9,7 @@ function registerRecipient(first_name:string, last_name:string, email:string, st
     );
 }
 
-function verifyUser(email:string) {
-    return pool.query(`SELECT id, account_password FROM recipients where email=$1`, [
-        email
-    ]);
-}
+
 
 function orderDevice(recipient_id:string, device_type: string, order_status: string) {
     return pool.query(
@@ -23,6 +19,13 @@ function orderDevice(recipient_id:string, device_type: string, order_status: str
     );
 }
 
+function verifyUserRecipients(email:string) {
+    return pool.query(`SELECT id, account_password FROM recipients where email=$1`, [
+        email
+    ]);
+}
+
 exports.registerRecipient = registerRecipient;
 exports.orderDevice = orderDevice;
-exports.verifyUser = verifyUser;
+exports.verifyUserRecipients = verifyUserRecipients;
+
