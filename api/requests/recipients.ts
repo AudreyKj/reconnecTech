@@ -29,12 +29,12 @@ recipientsRouter.post('/register', async (req: Request, res: Response) => {
 })
 
 recipientsRouter.post('/order/new', async (req: Request, res: Response) => {
-    const {device_type} = req.body;
+    const {deviceType, collectionMethod, paymentMethod} = req.body;
 
     try {
-        const recipient_id = req.session.userId;
+        const recipientId = req.session.userId;
         const status = "Order in Progress"
-        await db.orderDevice(recipient_id, device_type, status)
+        await db.orderDevice(recipientId, deviceType, collectionMethod, paymentMethod, status)
         return res.json(true)
     } catch(error){
         console.log('error', error)

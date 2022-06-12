@@ -114,6 +114,7 @@ header button {
   flex-direction: column;
   cursor: pointer;
   margin: 1rem;
+  font-size:1rem;
 }
 
 .inventory-item img {
@@ -130,6 +131,7 @@ header button {
   padding: 0.5rem 1rem;
   margin-top: 10Px;
   border: none;
+  font-size:1rem;
 }
 
 .inventory-filtering {
