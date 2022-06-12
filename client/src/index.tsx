@@ -12,7 +12,6 @@ import Signup from './pages/Signup';
 import Inventory from './pages/Inventory';
 import Profile from './pages/Profile';
 import About from './pages/About';
-import Home from './pages/Home';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,9 +21,8 @@ root.render(
     <BrowserRouter>
       <App />
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Inventory />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/inventory" element={<Inventory />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Navigate replace to="/" />} />
