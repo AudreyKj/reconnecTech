@@ -8,6 +8,10 @@ function Homepage() {
     window.open("/register-donor", "_self");
   }
 
+  function handleShop (){
+    window.open("/get-a-device", "_self");
+  }
+
   return (
     <div>
 
@@ -22,7 +26,7 @@ function Homepage() {
         <div id="redirecting-users">
           <h2>In a need for a new refurbished device?</h2>
           <h3>Explore our smartphones, tablets, and laptops</h3>
-          <button id="shop-btn">Shop</button>
+          <button id="shop-btn" onClick={handleShop}>Shop</button>
           <h4>Have an old device you’d like to donate to people<br></br> recently displaced or are of low means?</h4>
           <button id="doante-here-btn" onClick={handleDonateHere}>Donate here</button>
         </div>

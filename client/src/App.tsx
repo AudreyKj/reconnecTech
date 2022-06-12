@@ -11,17 +11,6 @@ function App() {
 
   const isUserLoggedIn = localStorage.getItem('user');
 
-    const payload = {
-      "first_name": 'xxx', "last_name": 'hhshsh', "email": 'audrey@gmail.com', "street_address": 'hhdhd', "country_location": 'gdggd', "city_location": 'hdd', "account_password": 'abc', "voucher": 'dhhd', "gov_issued_number": '123'
-    }
-  
-    useEffect(() => {
-      axios.post('/recipients/register', payload).then(res => {
-        console.log('RES', res)
-      }).catch(error => {
-        console.log('error', error)
-      })
-  }, [])
 
   const logout = () => {
     localStorage.clear();
@@ -45,7 +34,7 @@ function App() {
         <Link to="/register-donor"> <button>Donate a device</button></Link>
 
 
-        <Link to="/inventory"> <button>Get a device</button></Link>
+        <Link to="/get-a-device"> <button>Get a device</button></Link>
 
 
         {!isUserLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
