@@ -22,7 +22,7 @@ function App() {
     <header id="header-bar">
 
       <Link to="/"><h1>ReconnecTech</h1></Link>
-      
+
       <div className="nav-container">
         <Link to="/homepage"> <button>Home</button></Link>
 
@@ -34,8 +34,8 @@ function App() {
         <Link to="/get-a-device"> <button>Get a device</button></Link>
 
 
-        {!userLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
-        {userLoggedIn && <button onClick={logout}>Logout</button>}
+        {localStorage.getItem('user') && <Link to="/login"> <button><SignUpIcon /></button></Link>}
+        {(localStorage.getItem('user') || userLoggedIn) && <button onClick={logout}>Logout</button>}
 
 
         <Link to="/cart"> <button className="cart-button-header"><CartIcon /></button></Link>
