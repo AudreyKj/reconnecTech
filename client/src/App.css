@@ -161,6 +161,7 @@ header button {
   border: none;
   background-color: #0429AE;
   color: white;
+  border: 1px solid transparent;
   transition: all 0.3s;
 }
 
@@ -258,6 +259,7 @@ header button {
   background-color: #f9ded8;
   padding: 4px;
   border-radius: 8px;
+  margin-top:10px;
 }
 
 /* Donor Signup */
@@ -418,6 +420,10 @@ header button {
   padding-top:20px;
 }
 
+.tip {
+  text-align:center;
+}
+
 .cart a {
   text-decoration: underline;
 }
@@ -444,6 +450,7 @@ header button {
   margin-top: 10px;
   font-size: 1rem;
   transition: all 0.3s;
+  border: 1px solid transparent;
 }
 
 .cartItem button:hover {
