@@ -429,4 +429,54 @@ font-size:1rem;
   background:#F4ECEC;
 }
 
+/* Home page styling */
 
+#landing {
+  background: #F4ECEC;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 30px;
+}
+
+#reviews {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background: #FAF7EC;
+}
+
+.recipient-review {
+  padding: 80px;
+}
+
+#redirecting-users {
+  padding-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#img {
+  width: 450px;
+  height: auto;
+}
+
+#img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shop-btn {
+  padding: 20px;
+  background: #162BEC;
+  color: white;
+  width: 200px;
+}
+
+#doante-here-btn {
+  padding: 20px;
+  background: #FDC707;
+  width: 200px;
+}
