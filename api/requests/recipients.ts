@@ -38,6 +38,7 @@ recipientsRouter.post("/login", async (req:Request, res:Response) => {
         const passwordDB = isUserRegistered && isUserRegistered.rows[0]?.account_password
 
         if (!isUserRegistered || isUserRegistered.rows.length === 0) {
+            console.log('not found')
             return res.json({ error: "user not found" });
         }
 
@@ -46,8 +47,8 @@ recipientsRouter.post("/login", async (req:Request, res:Response) => {
         if (passwordMatched) {
             req.session.userId = isUserRegistered.rows[0].id;
         } else {
-
-            return res.json({ error: true });
+            console.log('password doesnt match')
+            return res.json({ error: 'password doesnt match' });
         }
         
         return res.json(true);

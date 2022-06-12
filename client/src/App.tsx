@@ -1,12 +1,12 @@
 import React from 'react';
+import Login from './pages/Login';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1> our hackthathon app!!!</h1>
-      </header>
+      <h1>hackathon app</h1>
+      <Login />
     </div>
   );
 }
