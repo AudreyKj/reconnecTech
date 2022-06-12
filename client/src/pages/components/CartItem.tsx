@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../App.css';
+import '../../App.css';
 
 interface Props {id:string, device_type:string}
 
