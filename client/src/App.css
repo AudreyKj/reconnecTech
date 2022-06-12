@@ -250,3 +250,9 @@ margin-top:-5%;
   font-size: 15px;
   outline: none;
 }
+
+#btn {
+  background: #045CAE;
+  padding: 20px;
+  color: white;
+}
