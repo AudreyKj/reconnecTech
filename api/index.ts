@@ -4,6 +4,9 @@ import compression from 'compression';
 import cookieSession from 'cookie-session';
 import cors from 'cors';
 import path from 'path';
+import {donationsRouter} from './requests/donations';
+import {recipientsRouter} from './requests/recipients';
+import {profileRouter} from './requests/profile';
 import {authRouter} from './requests/auth';
 
 const app = express();
@@ -47,11 +50,11 @@ app.use(
     })
 );
 
-app.use(require("csurf")());
+//app.use(require("csurf")());
 
 app.use((req:Request, res:Response, next:NextFunction) => {
     res.set("x-frame-options", "deny");
-    res.cookie("csrftoken", req.csrfToken());
+    //res.cookie("csrftoken", req.csrfToken());
     next();
 });
 
@@ -60,12 +63,11 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, '../client/build')));
   }
 
-/* app.get('/', (req:Request, res: Response) => {
-    res.sendFile(clientPath);
-}); */
-
 //ROUTES
-app.use('/users/auth', authRouter);
+app.use('/donations', donationsRouter);
+app.use('/recipients', recipientsRouter);
+app.use('/profile', profileRouter);
+app.use('/auth', authRouter);
 
 // //HOMEPAGE TEST
 // app.get("/", function (req:Request, res:Response) {
@@ -73,9 +75,9 @@ app.use('/users/auth', authRouter);
 // });
 
 // //redirect to default page
-// app.use((req:Request, res:Response) => {
-//     res.redirect("/")
-// });
+app.use((req:Request, res:Response) => {
+    res.redirect("/")
+});
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
