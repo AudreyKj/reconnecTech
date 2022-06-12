@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import axios from 'axios';
 import '../App.css';
 
-function Login() {
+function Signup() {
 
     useEffect(() => {
         axios.post('/recipients/login', {values: {email: 'audrey@gmail.com', password: 'pw'}}).then(({data}) => {
@@ -14,9 +14,9 @@ function Login() {
 
   return (
     <div>
-        <h1>LOGIN</h1>
+        <h1>SIGNUP</h1>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
