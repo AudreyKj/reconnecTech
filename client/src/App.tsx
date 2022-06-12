@@ -43,6 +43,8 @@ function App() {
 
 
       <div className="nav-container">
+        <Link to="/home"> <button>Home</button></Link>
+        
         <Link to="/about"> <button>About us</button></Link>
 
         <Link to="/register-donor"> <button>Donate a device</button></Link>

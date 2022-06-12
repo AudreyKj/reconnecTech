@@ -9,6 +9,7 @@ import {
 import './index.css';
 import App from './App';
 import Signup from './pages/Signup';
+import Home from './pages/Home';
 import Inventory from './pages/Inventory';
 import Profile from './pages/Profile';
 import About from './pages/About';
@@ -32,6 +33,7 @@ root.render(
         <Route path="/register-recipient" element={<RegisterRecipient />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
