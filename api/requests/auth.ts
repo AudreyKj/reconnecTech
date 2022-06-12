@@ -16,12 +16,9 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         values: { email, password }
     } = req.body;
 
-<<<<<<< HEAD
-=======
     console.log('email', email);
     console.log('password body', password);
 
->>>>>>> master
     try {
         const isUserRegisteredRecipient = await db.verifyUserRecipients(email);
         const isUserRegisteredDonor = await db.verifyUserDonors(email);
@@ -29,13 +26,10 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         let passwordDB;
         let userType;
 
-<<<<<<< HEAD
-=======
         console.log('isUserRegisteredRecipient', isUserRegisteredRecipient);
         console.log('isUserRegisteredDonor', isUserRegisteredDonor)
 
 
->>>>>>> master
         if (isUserRegisteredRecipient && isUserRegisteredRecipient.rows[0]?.account_password) {
             passwordDB = isUserRegisteredRecipient.rows[0]?.account_password
             userType = 'recipient'

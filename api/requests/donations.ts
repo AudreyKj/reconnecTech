@@ -11,16 +11,16 @@ declare module "express" {
   }
 
 donationsRouter.post('/register/donor', async (req: Request, res: Response) => {
-    const {first_name, last_name, email, country_location, city_location, account_password, company_name, share_donations_public, device_type, device_count, device_condition, device_collection} = req.body;
+    const {firstName, lastName, companyName, city, country, email, password, deviceCondition, deviceCollection, deviceCount, deviceType} = req.body;
 
     try {
-        const hashPw = await hash(account_password, salt);
-        const newDonor = await db.registerDonor(first_name, last_name, email, country_location, city_location, hashPw,company_name, share_donations_public);
+        const hashPw = await hash(password, salt);
+        const newDonor = await db.registerDonor(firstName, lastName, hashPw, companyName, city, country, email);
 
         const newDonorId = newDonor.rows[0].id;
         req.session.userId = newDonor.rows[0].id;
 
-        await db.submitDonation(device_type, device_count, device_condition, device_collection, newDonorId)
+        await db.submitDonation(deviceCondition, deviceCollection, deviceCount, deviceType, newDonorId)
 
         return res.json(true)
 
