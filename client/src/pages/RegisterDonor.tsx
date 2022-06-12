@@ -52,14 +52,14 @@ function RegisterDonor() {
         if (error) setError('');
 
         navigate('/');
+        window.location.reload();
 
     }).catch(() => {
-      //setError('Please double check all the fields and try again.')
-      navigate('/');
+      setError('Please double check all the fields and try again.')
 
-      // setTimeout(() => {
-      //   setError('')
-      // }, 3000)
+      setTimeout(() => {
+        setError('')
+      }, 3000)
     })
   }
 

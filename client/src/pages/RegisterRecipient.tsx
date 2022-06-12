@@ -54,6 +54,7 @@ function RegisterRecipient() {
           if(error)setError('');
 
           navigate('/');
+          window.location.reload();
 
       }
   }).catch(() => {
