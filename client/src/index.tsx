@@ -27,14 +27,14 @@ root.render(
     <BrowserRouter>
       <App />
       <Routes>
-      <Route path="/" element={<Inventory />} />
+      <Route path="/" element={<Homepage />} />
         <Route path="/login" element={localStorage.getItem('user') ? <Inventory /> : <Signup />} />
         <Route path="/register-donor" element={<RegisterDonor />} />
         <Route path="/register-recipient" element={<RegisterRecipient />} />
         <Route path="/get-a-device" element={<Inventory />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/inventory" element={<Inventory />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Navigate replace to="/" />} /> 
