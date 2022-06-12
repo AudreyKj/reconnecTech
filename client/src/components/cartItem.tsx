@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../App.css';
 
@@ -20,17 +20,22 @@ export const CartItem = (props: Props) => {
         setPaymentMethod(target.value)
     }
 
-    const handleOrderSubmit = () => {
+    const handleOrderSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         axios.post('/recipients/order/new', {collectionMethod, paymentMethod, deviceType: device_type})
-        .then(({data}) => {
-            console.log('ORDER', data)
+        .then(() => {
             setOrderConfirmed(true);
+            if (localStorage.getItem('cartItems')) {
+                let prevItems = JSON.parse(localStorage.getItem('cartItems') as string);
+                const updatedItems = prevItems.filter((item: {id:string, device_type:string}) => item.id !== id) 
+                localStorage.setItem('cartItems', JSON.stringify(updatedItems))
+              }
         })
     }
 
     return (
-        <div>
-            <h1>device #{id} - {device_type}</h1>
+        <div className="cartItem">
+            <h1>{device_type} - order number: #00{id}</h1>
             {!orderConfirmed && (
                  <form className="order">
                      <label htmlFor="collection">Choose a collection option to get this device:

@@ -26,7 +26,7 @@ root.render(
       <App />
       <Routes>
       <Route path="/" element={<Inventory />} />
-        <Route path="/login" element={<Signup />} />
+        <Route path="/login" element={localStorage.getItem('user') ? <Inventory /> : <Signup />} />
         <Route path="/register-donor" element={<RegisterDonor />} />
         <Route path="/register-recipient" element={<RegisterRecipient />} />
         <Route path="/profile" element={<Profile />} />

@@ -1,33 +1,29 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { CartItem } from '../components/CartItem';
+import { Link } from "react-router-dom";
 import '../App.css';
 
 
 
 function Cart() {
 
+    const cartItems = JSON.parse(localStorage.getItem('cartItems') as string);
+    console.log('cartItems', cartItems)
+    const isUserLoggedIn = localStorage.getItem('user');
+    console.log('isUserLoggedIn', isUserLoggedIn)
 
     return (
-        <div>
-            <h1>device #{id} - {device_type}</h1>
-
-            <form className="order">
-                <label htmlFor="collection">Choose a collection option to get this device:
-                    <select id="collection" name="collection" onChange={handleSelectCollection}>
-                        <option value="shipping">Shipping</option>
-                        <option value="pickup">Pick-up at the refurbishing hub</option>
-                    </select>
-                </label>
-                <label htmlFor="payment">Choose a payment method:
-                    <select id="payment" name="payment" onChange={handleSelectPayment}>
-                        <option value="credit-card">Credit card</option>
-                        <option value="visa-number">Visa number for refugee</option>
-                        <option value="voucher">Voucher id</option>
-                    </select>
-                </label>
-                <button type="submit" onClick={handleOrderSubmit}>Confirm order</button>
-            </form>
-        </div>
+        <section className="cart">
+            {!isUserLoggedIn && (
+                <span>You have item(s) in your cart but you must have an account to order. <br /><br /> <Link to="/login">Please log in here.</Link> </span>
+            )}
+            {isUserLoggedIn && cartItems && cartItems.length > 0 && cartItems.map((item: { device_type: string, id: string }) => {
+                return(<CartItem id={item.id} key={item.id} device_type={item.device_type} />)
+            })}
+            {isUserLoggedIn && !cartItems && (
+                <span>You don't have any item(s) in your cart: the devices you select will be listed here.</span>
+            )}
+        </section>
     );
 }
 

@@ -38,7 +38,7 @@ function Inventory() {
     setData(inventoryData.filter(item => item.location === target.value));
   }
 
-  const addToCart = (device_type: string, id: string) => {
+  const addToCart = (device_type: string, id: number) => {
 
     if (localStorage.getItem('cartNum')) {
       let cartNumber = parseInt(localStorage.getItem('cartNum') as 'string');
@@ -53,7 +53,7 @@ function Inventory() {
 
     if (localStorage.getItem('cartItems')) {
       const prevItems = JSON.parse(localStorage.getItem('cartItems') as string);
-      prevItems.push({ device_type: device_type, id: id })
+      localStorage.setItem('cartItems', JSON.stringify([...prevItems, { device_type: device_type, id: id }]))
     } else {
       const item = [{ device_type: device_type, id: id }]
       localStorage.setItem('cartItems', JSON.stringify(item))
@@ -82,12 +82,13 @@ function Inventory() {
 
       <ul className="inventory-list">
         {data.map(item => {
+          console.log('ID', item.id)
           return (
             <>
               <li className="inventory-item" key={item.id}>
                 <img src={item.image_url} alt="available digital device" />
                 <span>{item.device_type} in {item.location}</span>
-                <button onClick={() => addToCart(item.device_type, id)}> add to cart</button>
+                <button onClick={() => addToCart(item.device_type, item.id)}> add to cart</button>
               </li>
             </>
           )

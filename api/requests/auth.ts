@@ -16,12 +16,19 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         values: { email, password }
     } = req.body;
 
+    console.log('email', email);
+    console.log('password body', password);
+
     try {
         const isUserRegisteredRecipient = await db.verifyUserRecipients(email);
         const isUserRegisteredDonor = await db.verifyUserDonors(email);
 
         let passwordDB;
         let userType;
+
+        console.log('isUserRegisteredRecipient', isUserRegisteredRecipient);
+        console.log('isUserRegisteredDonor', isUserRegisteredDonor)
+
 
         if (isUserRegisteredRecipient && isUserRegisteredRecipient.rows[0]?.account_password) {
             passwordDB = isUserRegisteredRecipient.rows[0]?.account_password
