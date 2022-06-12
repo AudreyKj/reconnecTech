@@ -39,6 +39,8 @@ const handleLoginSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
 
   return (
     <section className="signup">
+
+      <div className="login-container">
       <form className="form-login" method="POST" autoComplete="off">
         LOGIN
 
@@ -68,14 +70,16 @@ const handleLoginSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
         </label>
 
         <button className="login-submit" onClick={handleLoginSubmit}>
-          LOGIN
+          Login
         </button>
         {error && (
           <span className="error">{error}</span>
         )}
       </form>
+      </div>
 
       <div className="register-options"> 
+            <span> Register if you do not have an account:</span>
         <Link to="/register-donor"><button>Register to donate devices <br />(individual and businesses)</button></Link> 
         <Link to="/register-recipient"><button>Register to receive devices <br />(only individuals)</button></Link>
       </div>

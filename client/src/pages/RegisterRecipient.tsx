@@ -4,7 +4,7 @@ import '../App.css';
 function RegisterRecipient() {
   return (
     <div>
-        <h1>Register Recipient </h1>
+        //Register Recipient page
     </div>
   );
 }

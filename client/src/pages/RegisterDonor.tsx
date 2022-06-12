@@ -4,7 +4,7 @@ import '../App.css';
 function RegisterDonor() {
   return (
     <div>
-        <h1>Register Donor (individuals and businesses) </h1>
+        //Register Donor (individuals and businesses) page
     </div>
   );
 }
