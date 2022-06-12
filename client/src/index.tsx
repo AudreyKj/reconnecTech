@@ -12,6 +12,9 @@ import Signup from './pages/Signup';
 import Inventory from './pages/Inventory';
 import Profile from './pages/Profile';
 import About from './pages/About';
+import RegisterDonor from './pages/RegisterDonor';
+import RegisterRecipient from './pages/RegisterRecipient';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,7 +25,9 @@ root.render(
       <App />
       <Routes>
       <Route path="/" element={<Inventory />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Signup />} />
+        <Route path="/register-donor" element={<RegisterDonor />} />
+        <Route path="/register-recipient" element={<RegisterRecipient />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Navigate replace to="/" />} />

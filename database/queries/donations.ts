@@ -21,5 +21,12 @@ function submitDonation(device_type:string, device_count:number, device_conditio
     );
 }
 
+function verifyUserDonors(email:string) {
+    return pool.query(`SELECT id, account_password, company_name  FROM donors where email=$1`, [
+        email
+    ]);
+}
+
 exports.registerDonor = registerDonor;
 exports.submitDonation = submitDonation;
+exports.verifyUserDonors = verifyUserDonors;

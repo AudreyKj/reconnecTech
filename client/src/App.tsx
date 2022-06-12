@@ -6,10 +6,22 @@ import './index.css';
 
 
 function App() {
-  return (
-    <div className="App">
-      <header>
 
+  const isUserLoggedIn = localStorage.getItem('user');
+  //check for local-storage: 
+  //// if loggedIn: display Profile instead of signup: same icon?
+
+  //logout: clear storage 
+
+  const logout = () => {
+    localStorage.clear();
+    //axios logout
+  }
+
+
+  return (
+
+      <header>
 
           <div className="title-info-header">
             <Link to="/"><h1>Reconnectech</h1></Link>
@@ -18,13 +30,12 @@ function App() {
 
 
 
-          <Link to="/signup"> <button className="signup-button-header"><SignUpLogo /></button></Link>
+          {!isUserLoggedIn ? <Link to="/login"> <button className="signup-button-header"><SignUpLogo /></button></Link> : 
+          <Link to="/profile"> <button className="signup-button-header">Your profile</button></Link>}
         
 
       </header>
 
-
-    </div>
   );
 }
 
