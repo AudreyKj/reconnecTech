@@ -73,9 +73,9 @@ app.use('/profile', profileRouter);
 // });
 
 // //redirect to default page
-// app.use((req:Request, res:Response) => {
-//     res.redirect("/")
-// });
+app.use((req:Request, res:Response) => {
+    res.redirect("/")
+});
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
