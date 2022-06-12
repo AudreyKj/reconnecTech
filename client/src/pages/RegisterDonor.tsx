@@ -44,8 +44,6 @@ function RegisterDonor() {
 
     const deviceCount = smartphones + tablets + computers;
 
-    console.log('deviceCount', deviceCount);
-
     axios.post("/donations/register/donor", { firstName, lastName, companyName, city, country, email, password, deviceCondition, deviceCollection, deviceCount, deviceType }).then(() => {
         localStorage.setItem('user', 'donor');
 

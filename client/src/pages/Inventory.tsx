@@ -82,7 +82,6 @@ function Inventory() {
 
       <ul className="inventory-list">
         {data.map(item => {
-          console.log('ID', item.id)
           return (
             <>
               <li className="inventory-item" key={item.id}>

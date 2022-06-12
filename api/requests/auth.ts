@@ -16,9 +16,6 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         values: { email, password }
     } = req.body;
 
-    console.log('email', email);
-    console.log('password body', password);
-
     try {
         const isUserRegisteredRecipient = await db.verifyUserRecipients(email);
         const isUserRegisteredDonor = await db.verifyUserDonors(email);
