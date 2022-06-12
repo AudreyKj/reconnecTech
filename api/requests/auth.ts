@@ -60,6 +60,7 @@ authRouter.post("/login", async (req: Request, res: Response) => {
 });
 
 
-authRouter.get("/logout", (req:Request, res:Response) => {
+authRouter.post("/logout", (req:Request, res:Response) => {
     req.session.userId = null;
+    return res.json(true);
 });

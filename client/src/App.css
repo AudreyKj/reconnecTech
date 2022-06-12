@@ -415,6 +415,7 @@ header button {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding-top:20px;
 }
 
 .cart a {

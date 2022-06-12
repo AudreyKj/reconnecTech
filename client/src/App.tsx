@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as SignUpIcon } from './icons/signup.svg';
 import { ReactComponent as CartIcon } from './icons/cart2.svg';
 import axios from 'axios';
@@ -8,13 +8,12 @@ import './index.css';
 
 
 function App() {
-
-  const isUserLoggedIn = localStorage.getItem('user');
-
+  const [userLoggedIn, setUserLoggedIn] = useState<string | boolean | null>(localStorage.getItem('user'));
 
   const logout = async () => {
     localStorage.clear();
-    await axios.get('/auth/logout')
+    setUserLoggedIn(false);
+    await axios.post('/auth/logout')
   }
 
 
@@ -22,10 +21,8 @@ function App() {
 
     <header>
 
-
       <Link to="/"><h1>ReconnecTech</h1></Link>
-
-
+      
       <div className="nav-container">
         <Link to="/homepage"> <button>Home</button></Link>
 
@@ -37,8 +34,8 @@ function App() {
         <Link to="/get-a-device"> <button>Get a device</button></Link>
 
 
-        {!isUserLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
-        {isUserLoggedIn && <button onClick={logout}>Logout</button>}
+        {!userLoggedIn && <Link to="/login"> <button><SignUpIcon /></button></Link>}
+        {userLoggedIn && <button onClick={logout}>Logout</button>}
 
 
         <Link to="/cart"> <button className="cart-button-header"><CartIcon /></button></Link>
