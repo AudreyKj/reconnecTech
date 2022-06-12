@@ -1,0 +1,161 @@
+
+#donor-header {
+    color: white;
+    padding: 10px 0px;
+    font-size: 40px;
+}
+
+#donor-form {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#col1 {
+    padding-right: 40px;
+}
+
+#col2 {
+    padding-left: 40px;
+}
+
+#individual {
+    background: #23DAE6;
+    border-radius: 100px;
+    width: 400px;
+    height: 553px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: individual_slidein 2s;
+    animation-delay: 1s;
+}
+
+#individual-png {
+    width: 220px;
+    height: 277px;
+}
+
+#business {
+    background: #23DAE6;
+    border-radius: 100px;
+    width: 400px;
+    height: 553px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: business_slidein 2s;
+    animation-delay: 1s;
+}
+
+#business-png {
+    width: 285px;
+    height: 282px;
+}
+
+.donor-text {
+    align-self: center;
+    padding: 20px;
+}
+
+#form-panel {
+    background: #23DAE6;
+    border-radius: 100px;
+    width: 900px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+#name {
+    display: none;
+}
+
+#company-name {
+    display: none;
+}
+
+#email{
+    display: inherited;
+}
+
+#country {
+    display: none;
+}
+
+#public {
+    display: none;
+}
+
+#type-count {
+    display: none;
+}
+
+#condition-collection {
+    display: none;
+}
+
+#thankyou {
+    display: none;
+}
+
+.text-element {
+    padding: 0px 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.ckbx-element {
+    transform: scale(2.5);
+}
+
+.input-element {
+    padding: 10px 30px;
+    font-size: 30px;
+    width: 250px; 
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+}
+
+.next-btn {
+    border-radius: 30px;
+    border-color: transparent;
+    background: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px 20px;
+    display: block;
+    margin-left: 100%;
+    margin-top: 5%;
+}
+
+.select-element {
+    padding: 10px 30px;
+    font-size: 30px;
+    width: 400px; 
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+}
+
+.row{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@keyframes individual_slidein {
+    from { transform: translateX(-200%); }
+    to {transform: translateX(0%); }
+}
+
+@keyframes business_slidein {
+    from { transform: translateX(200%); }
+    to {transform: translateX(0%); }
+}
+
