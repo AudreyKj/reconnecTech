@@ -506,4 +506,88 @@ header button {
   font-size: 1rem;
   margin-right: 5px;
 
+/* Home page styling */
+
+#landing {
+  background: #F4ECEC;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 30px;
+}
+
+#reviews {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background: #FAF7EC;
+}
+
+.recipient-review {
+  padding: 80px;
+}
+
+#redirecting-users {
+  padding-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#img {
+  width: 450px;
+  height: auto;
+}
+
+#img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shop-btn {
+  padding: 20px;
+  background: #162BEC;
+  color: white;
+  width: 200px;
+}
+
+#doante-here-btn {
+  padding: 20px;
+  background: #FDC707;
+  width: 200px;
+}
+
+/* About Us Page */
+#title {
+  font-family: 'Zilla Slab';
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+#about-wrapper {
+  padding: 80px 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #FAF7EC;
+}
+
+#message {
+  margin-left: 50px;
+  font-family: 'Zilla Slab';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+#footer {
+  background: #F4ECEC;
+  height: 200px;
 }
