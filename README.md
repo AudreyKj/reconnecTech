@@ -2,8 +2,6 @@
 
 ReconnecTech is a web app that facilitates providing refurbished electronic devices  (such as smartphones, tablets, and laptops) to refugees and people with low to no means. 
 
-[live demo](https://athena-hackathon22-alm100101.herokuapp.com/)
-
 - Businesses that donate their older devices receive tax incentive while meeting their environmental initiatives.
 
 
@@ -12,6 +10,7 @@ ReconnecTech is a web app that facilitates providing refurbished electronic devi
 
 - Recipients of new used device help close the technology gap, find opportunities for work and education, while connecting with family & friends.
 
+[live demo](https://athena-hackathon22-alm100101.herokuapp.com/)
 
 ## App Features
 - Registration for donors (businesses/individuals) and donation submission
@@ -25,7 +24,9 @@ ReconnecTech is a web app that facilitates providing refurbished electronic devi
 - Gamification through gold, silver, and bronze badges for top donators
 - Recipient reviews page
 
-## Tech stack: TypeScript, React, Node.js, Express, PostgreSQL 
+## Tech stack: 
+TypeScript, React, Node.js, Express, PostgreSQL 
 Deployed through Heroku
 
-## credits: Audrey Kadjar (web dev), Mansi Patel (web dev), Lisa McClain (UI/UX design)
+## Credits: 
+Audrey Kadjar (web dev, mostly backend), Mansi Patel (web dev, mostly frontend), Lisa McClain (UI/UX design)
