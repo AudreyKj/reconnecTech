@@ -1,8 +1,7 @@
-const bcrypt = require("bcryptjs");
-const { promisify } = require("util");
+import bcrypt from "bcryptjs";
+import { promisify } from "util";
 
-let genSalt = promisify(bcrypt.genSalt);
-module.exports.salt = bcrypt.genSaltSync(10);
-module.exports.hash = promisify(bcrypt.hash);
-module.exports.compare = promisify(bcrypt.compare);
+export const salt = bcrypt.genSaltSync(10);
+export const hash = promisify(bcrypt.hash);
+export const compare = promisify(bcrypt.compare);
 

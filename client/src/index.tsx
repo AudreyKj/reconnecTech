@@ -11,7 +11,6 @@ import App from './App';
 import Signup from './pages/Signup';
 import Homepage from './pages/Homepage';
 import Inventory from './pages/Inventory';
-import Profile from './pages/Profile';
 import About from './pages/About';
 import RegisterDonor from './pages/RegisterDonor';
 import RegisterRecipient from './pages/RegisterRecipient';
@@ -32,7 +31,6 @@ root.render(
         <Route path="/register-donor" element={<RegisterDonor />} />
         <Route path="/register-recipient" element={<RegisterRecipient />} />
         <Route path="/get-a-device" element={<Inventory />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/cart" element={<Cart />} />

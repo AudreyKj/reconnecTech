@@ -11,7 +11,9 @@ declare module "express" {
   }
 
 recipientsRouter.post('/register', async (req: Request, res: Response) => {
-    const {firstName, lastName, password, email, city,govIssuedNumber} = req.body;
+    const {values: {firstName, lastName, password, email, city,govIssuedNumber}} = req.body;
+
+    if(!password) return new Error();
 
     try {
         const hashPw = await hash(password, salt);

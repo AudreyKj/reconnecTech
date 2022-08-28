@@ -1,17 +1,13 @@
 import express, { Response, Request, NextFunction } from 'express';
-import { Server } from 'http';
+import cookieSession from "cookie-session";
+import http from 'http'; 
 import compression from 'compression';
-import cookieSession from 'cookie-session';
 import cors from 'cors';
 import path from 'path';
 import { donationsRouter } from './requests/donations';
 import { recipientsRouter } from './requests/recipients';
 import { profileRouter } from './requests/profile';
 import { authRouter } from './requests/auth';
-
-const app = express();
-const server = new Server(app);
-
 
 declare module "express" {
     export interface Request {
@@ -20,8 +16,11 @@ declare module "express" {
     }
 }
 
-const clientPath = path.join(__dirname, "../client/public/index.html")
-console.log('clientPath', clientPath);
+const app = express();
+app.disable("x-powered-by");
+
+const server = new http.Server(app);
+const clientPath = path.join(__dirname, "../client/public/index.html");
 
 app.use(compression());
 
@@ -35,12 +34,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     next();
 });
 
-
 app.use(
     cookieSession({
-        secret: `The secret is used to generate the second cookie used to verify
-        the integrity of the first cookie`,
-        maxAge: 1000 * 60 * 60 * 24 * 14
+        secret: `The secret is used to generate the second cookie which is used 
+        to verify the integrity of the first cookie`,
+        cookie: {
+            secure: true,
+            httpOnly: true,
+            maxAge: 1000 * 60 * 60 * 24 * 14,
+        }
     })
 );
 
@@ -51,7 +53,6 @@ app.use(
 );
 
 app.use((req: Request, res: Response, next: NextFunction) => {
-    res.set("x-frame-options", "deny");
     next();
 });
 
@@ -66,10 +67,8 @@ app.use('/recipients', recipientsRouter);
 app.use('/profile', profileRouter);
 app.use('/auth', authRouter);
 
-
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+app.get('/', (req:Request, res: Response) => {
+    res.sendFile(clientPath);
 });
-
 
 server.listen(process.env.PORT || 5000, () => console.log('server on'));

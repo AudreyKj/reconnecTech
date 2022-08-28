@@ -9,8 +9,6 @@ declare module "express" {
     }
   }
 
-
-  ///profile/donor
  profileRouter.get('/donor', async (req: Request, res: Response) => {
 
     const donor_id = req.session.userId;

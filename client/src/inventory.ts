@@ -1,8 +1,11 @@
-export const inventoryData: {
-    id: number, device_type: string,
-    location: string,
-    image_url: string
-}[] = [
+export interface InventoryListItem {
+    id: number;
+    device_type: string;
+    location: string;
+    image_url: string;
+}
+
+export const inventoryData: InventoryListItem[] = [
         {
             id: 1,
             device_type: 'tablet',

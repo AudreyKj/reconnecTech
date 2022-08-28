@@ -42,9 +42,12 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         const passwordMatched = await compare(password, passwordDB);
 
         if (passwordMatched) {
-            req.session.userId = isUserRegisteredRecipient.rows[0].id;
+            if(isUserRegisteredRecipient){
+                req.session.userId = isUserRegisteredRecipient.rows[0]?.id;
+            } else {
+                req.session.userId = isUserRegisteredDonor.rows[0]?.id;
+            }
         } else {
-            console.log('password doesnt match')
             return res.json({ error: 'password doesnt match' });
         }
 

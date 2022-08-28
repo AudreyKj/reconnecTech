@@ -1,11 +1,11 @@
 const { pool } = require('../db-setUp');
 export {}
 
-function registerRecipient(firstName:string, lastName:string, email:string, city:string, accountPassword:string, govIssuedNumber:string) {
+function registerRecipient(firstName:string, lastName:string, accountPassword:string, email:string, city:string,govIssuedNumber:string) {
     return pool.query(
-        `INSERT INTO recipients(first_name, last_name, email, city_location, account_password, gov_issued_number)
+        `INSERT INTO recipients(first_name, last_name, account_password, email, city_location, gov_issued_number)
     VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-        [firstName, lastName, email, city, accountPassword, govIssuedNumber]
+        [firstName, lastName, accountPassword, email, city, govIssuedNumber]
     );
 }
 
@@ -18,7 +18,7 @@ function orderDevice(recipientId:string, deviceType:string, collectionMethod:str
 }
 
 function verifyUserRecipients(email:string) {
-    return pool.query(`SELECT id, account_password FROM recipients where email=$1`, [
+    return pool.query(`SELECT * FROM recipients where email=$1`, [
         email
     ]);
 }

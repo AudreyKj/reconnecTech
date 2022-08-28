@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import { ReactComponent as SignUpIcon } from './icons/signup.svg';
 import { ReactComponent as CartIcon } from './icons/cart2.svg';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import './App.css';
 import './index.css';
 
 
 function App() {
   const [userLoggedIn, setUserLoggedIn] = useState<string | boolean | null>(localStorage.getItem('user'));
+  const navigate = useNavigate();
 
   const logout = async () => {
     localStorage.clear();
     setUserLoggedIn(false);
-    await axios.post('/auth/logout')
+
+    axios.post('/auth/logout').then(() => navigate('/home'))
   }
 
 
@@ -31,14 +33,14 @@ function App() {
         <Link to="/register-donor"> <button>Donate a device</button></Link>
 
 
-        <Link to="/get-a-device"> <button>Get a device</button></Link>
+        {localStorage.getItem('user') !== 'donor-business' && <Link to="/get-a-device"> <button>Get a device</button></Link>}
 
 
         {!localStorage.getItem('user') && <Link to="/login"> <button><SignUpIcon /></button></Link>}
         {(localStorage.getItem('user') || userLoggedIn) && <button onClick={logout}>Logout</button>}
 
 
-        <Link to="/cart"> <button className="cart-button-header"><CartIcon /></button></Link>
+        {localStorage.getItem('user') !== 'donor-business' && <Link to="/cart"> <button className="cart-button-header"><CartIcon /></button></Link>}
 
       </div>
 

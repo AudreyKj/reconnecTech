@@ -1,6 +1,7 @@
 const { pool } = require('../db-setUp');
 export {}
 
+
 function registerDonor(firstName:string, lastName:string, password:string, companyName:string, city:string, country:string, email:string) {
     return pool.query(
         `INSERT INTO donors (first_name, last_name,  account_password, company_name, city_location, country_location, email)
@@ -19,7 +20,7 @@ function submitDonation(deviceCondition:string, deviceCollection:string, deviceC
 }
 
 function verifyUserDonors(email:string) {
-    return pool.query(`SELECT id, account_password, company_name  FROM donors where email=$1`, [
+    return pool.query(`SELECT *  FROM donors where email=$1`, [
         email
     ]);
 }

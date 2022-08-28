@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { inventoryData } from '../inventory';
+import { InventoryItem } from './components/InventoryItem';
 import '../App.css';
 
 
@@ -83,13 +84,7 @@ function Inventory() {
       <ul className="inventory-list">
         {data.map(item => {
           return (
-            <>
-              <li className="inventory-item" key={item.id}>
-                <img src={item.image_url} alt="available digital device" />
-                <span>{item.device_type} in {item.location}</span>
-                <button onClick={() => addToCart(item.device_type, item.id)}> add to cart</button>
-              </li>
-            </>
+            <InventoryItem item={item} addToCart={addToCart} />
           )
         })}
       </ul>
