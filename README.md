@@ -11,7 +11,9 @@ ReconnecTech is a web app that facilitates providing refurbished electronic devi
 - Recipients of new used device help close the technology gap, find opportunities for work and education, while connecting with family & friends.
 
 
-The app was made in only 1.5 day for the Athena Hackathon on June 11th, 2022. The Hackathon's themes drew upon building an app that could help refugees' social inclusion and businesses' environmental initiatives. We collaborated as a team of 3 (Audrey, Mansi & Lisa) to build the project from the ground up in a short time - from ideation, to prototyping and coding.
+The app was made in only 1.5 day for the Athena Hackathon on June 11th, 2022. The Hackathon's themes drew upon building an app that could help refugees' social inclusion and businesses' environmental initiatives. 
+
+We collaborated as a team of 3 (Audrey, Mansi & Lisa) to build the project from the ground up in a short time - from ideation, to prototyping and coding.
 
 [live demo](https://athena-hackathon22-alm100101.herokuapp.com/)
 
