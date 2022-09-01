@@ -13,6 +13,8 @@ body {
   width: 100%;
 }
 
+
+
 button {
   background: transparent;
   border: none;
@@ -87,7 +89,7 @@ header svg {
   fill: black;
 }
 
-header button {
+header a {
   cursor: pointer;
   color: black;
   font-size: 1.1rem;
@@ -95,6 +97,14 @@ header button {
   padding-right: 3rem;
   display: flex;
   align-items: center;
+}
+
+.active-class {
+  font-weight:bold;
+}
+
+.icon-active svg{
+  fill:#0429AE;
 }
 
 .about-button-header {

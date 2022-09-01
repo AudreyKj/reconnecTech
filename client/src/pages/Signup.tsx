@@ -35,7 +35,6 @@ function Signup() {
 
 
     }).catch((error) => {
-      console.log('error', error);
       setError(authError);
     })
   };
