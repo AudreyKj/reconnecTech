@@ -54,7 +54,6 @@ authRouter.post("/login", async (req: Request, res: Response) => {
         return res.json({userType: userType});
 
     } catch (error) {
-        console.log('error - login', error);
         return res.json({ error: true });
     }
 });

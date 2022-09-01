@@ -25,7 +25,6 @@ recipientsRouter.post('/register', async (req: Request, res: Response) => {
         return res.json(true)
 
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })
@@ -39,7 +38,6 @@ recipientsRouter.post('/order/new', async (req: Request, res: Response) => {
         await db.orderDevice(recipientId, deviceType, collectionMethod, paymentMethod, status)
         return res.json(true)
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })

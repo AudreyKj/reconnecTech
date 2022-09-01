@@ -25,7 +25,6 @@ donationsRouter.post('/register/donor', async (req: Request, res: Response) => {
         return res.json(true)
 
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })
@@ -42,7 +41,6 @@ donationsRouter.post('/new', async (req: Request, res: Response) => {
         return res.json(true)
 
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })

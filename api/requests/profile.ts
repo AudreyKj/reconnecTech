@@ -23,7 +23,6 @@ declare module "express" {
         return res.json({totalDonations: totalCount})
 
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })
@@ -34,7 +33,6 @@ profileRouter.get('/recipient', async (req: Request, res: Response) => {
         const {rows} = await db.getRecipientOrderInfo(recipient_id);
         return res.json(rows)
     } catch(error){
-        console.log('error', error)
         return res.json(error)
     }
 })
