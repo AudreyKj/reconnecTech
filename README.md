@@ -49,9 +49,7 @@ npm install
 
 - Set up a PostgreSQL database:
 
-Set up a PostgreSQL database (download [PostgreSQL](https://www.postgresql.org/download/) if necessary) and add the database credentials in a `.env` file.
-
-Once the database is created, connect to your database `psql -d databaseName`, and create the tables found in `database/tables`.
+Set up a PostgreSQL database (download [PostgreSQL](https://www.postgresql.org/download/) if necessary) and add the database credentials in a `.env` file. Once the database is created, connect to your database `psql -d databaseName`, and create the tables found in `database/tables`.
 
 - Run a development server:
 
