@@ -47,6 +47,12 @@ git clone https://github.com/AudreyKj/athena-hackathon22-inclusive-app.git
 npm install
 ```
 
+- Set up a PostgreSQL database:
+
+Set up a PostgreSQL database (download [PostgreSQL](https://www.postgresql.org/download/) if necessary) and add the database credentials in a `.env` file.
+
+Once the database is created, connect to your database `psql -d databaseName`, and create the tables found in `database/tables`.
+
 - Run a development server:
 
 Concurrently in 2 different tabs:
