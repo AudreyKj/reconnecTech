@@ -1,4 +1,4 @@
-# Athena June 2022 Hackathon - ReconnecTech
+# ReconnecTech
 
 ReconnecTech is a web app that facilitates providing refurbished tech devices (such as smartphones, tablets, and laptops) to refugees and people with low to no means. 
 
